@@ -13,9 +13,11 @@ public class StudentTest {
         mutableStudent.setAge(22);
 
         // TODO: Display the student again.
-        // Question: Did the SAME object change?
+        // Question: Did the SAME object change? Yes the age attribute was successfully changed using a setter method 
+        //on the same mutable student object
+        System.out.println("Attempt to change attribute of Mutable Student object using setter method: ");
         mutableStudent.displayInfo();
-        System.out.println("Confirmed: MutabelStudent " + mutableStudent.getName() + " age updated to " + mutableStudent.getAge());
+        System.out.println("Confirmed: " + mutableStudent.getName() + "'s age updated to " + mutableStudent.getAge());
 
         System.out.println();
 
@@ -25,6 +27,15 @@ public class StudentTest {
 
         // TODO: Display the student's information.
         immutableStudent.displayInfo();
+         
+        //Creating second ImmutableStudent object with different data
+        ImmutableStudent immutableStudent2 = new ImmutableStudent("Greg", 20);
+
+        //Dispaying both ImmutableStudent objects to show that first object cannot be changed with setter methods
+        System.out.println("Demonstrating that attributes of first Immutable Student object do not change\n"
+        + "after creation of second Immutable Student object: ");
+        immutableStudent.displayInfo();
+        immutableStudent2.displayInfo();
 
         // Try to answer this in a comment:
         // Why can you not change the ImmutableStudent object
@@ -41,5 +52,5 @@ public class StudentTest {
         // 3. What is the biggest difference you noticed? 
         //In MutableStudent we are able to use setter methods to update the attributes of the objects 
         //created in StudentTest, while ImmutableStudent objects cannot be modified after creation. 
-    }
-}
+    }//end of main method
+}//end of public class
